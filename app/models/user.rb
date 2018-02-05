@@ -17,4 +17,7 @@ class User < ApplicationRecord
     self.role == "admin"
   end
 
+  # Setup Model Relationship
+  has_many :tweets, dependent: :destroy
+  has_many :replys, dependent: :destroy
 end
