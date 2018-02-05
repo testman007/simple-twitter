@@ -15,6 +15,6 @@ class User < ApplicationRecord
   # 回傳 current_user是否為使用者？
   def admin?
     self.role == "admin"
-  enda
+  end
 
 end
