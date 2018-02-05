@@ -1,0 +1,29 @@
+<div class = "container">
+  <div class="container">
+    <h1>Edit Profile</h1>
+  </div>
+
+  <div class = "form container">
+    <%= form_for @user do |f| %>
+      <form class="form">
+        <!-- add column category -->
+        <div class="form-group">
+          <label for="InputUserName1">Name*</label>
+          <%= f.text_field :name, :class=> 'form-control' %>
+        </div>
+        <div class="form-group">
+          <label for="InputUserIntro1">自我介紹</label>
+          <%= f.text_area :intro, :class=> 'form-control' %>
+        </div>
+
+        <%= f.label :avatar, "大頭照上傳" %>
+        <%= image_tag @user.avatar, width: '100px' if @user.avatar? %>
+        <%= f.file_field :avatar %>
+        <br>
+        <% if current_user.id == @user.id %>
+          <%= f.submit class: "btn btn-primary"%>
+        <% end %>
+      </form>
+    <% end %>
+  </div>
+</div>
