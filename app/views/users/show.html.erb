@@ -1,0 +1,27 @@
+<div class = "container">
+
+  <!-- Show User profile -->
+  <div class="container">
+    <!-- User Avatar -->
+    <div class="col-md-3 col-sm-4">
+      <% if @user.avatar? %>
+        <%= image_tag @user.avatar, class: "img-responsive img-rounded", width: '400px' %>
+      <% else %>
+        <img src="http://via.placeholder.com/400x400" class="img-responsive img-rounded">
+      <% end %>
+    </div>
+    <!-- List of User Info -->
+    <div class="col-md-9 col-sm-8">
+      <h2><strong><%= @user.name %></strong></h2>
+      <p><strong><%= @user.email %></strong></p>
+      <div><%= simple_format @user.introduction %></div>
+      <% if current_user.id == @user.id %>
+        <%= link_to 'Edit Profile', edit_user_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+
+</div>

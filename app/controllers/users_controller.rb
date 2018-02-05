@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :show, :update]
   before_action :user_params, only: [:update]
 
   def tweets
   end
 
   def edit
+    # before_action :set_user
+  end
+
+  def show
     # before_action :set_user
   end
 
